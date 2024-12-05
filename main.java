@@ -9,7 +9,7 @@ public class main {
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("\nSaving all data...");
-            studentManager.saveStudentsToFile();
+            studentManager.saveStudentsToFile();    //saves to file we created 
             courseManager.saveCoursesToFile();
         }));
 
@@ -34,9 +34,9 @@ public class main {
                     break;
                 case 3:
                     System.out.println("Exiting...");
-                    System.exit(0); // Shutdown hook saves data here
+                    System.exit(0); // Shutdown saves data here
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println("Invalid choice. Please try again."); //holds for error 
             }
         }
     }
