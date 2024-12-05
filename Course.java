@@ -8,7 +8,7 @@ public class Course implements Serializable {
 
     private String name;
     private String description;
-    private Map<String, String> students; // Student name -> Grade
+    private Map<String, String> students;
 
     public Course(String name, String description) {
         this.name = name;
