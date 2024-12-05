@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        CourseManager courseManager = new CourseManager(); // Shared instance
-        StudentManager studentManager = new StudentManager(); // Shared instance
+        CourseManager courseManager = new CourseManager();
+        StudentManager studentManager = new StudentManager();
         Scanner scanner = new Scanner(System.in);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("\nSaving all data...");
-            studentManager.saveStudentsToFile();    //saves to file we created 
+            studentManager.saveStudentsToFile();
             courseManager.saveCoursesToFile();
         }));
 
@@ -23,7 +23,7 @@ public class main {
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -34,9 +34,9 @@ public class main {
                     break;
                 case 3:
                     System.out.println("Exiting...");
-                    System.exit(0); // Shutdown saves data here
+                    System.exit(0);
                 default:
-                    System.out.println("Invalid choice. Please try again."); //holds for error 
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
     }
