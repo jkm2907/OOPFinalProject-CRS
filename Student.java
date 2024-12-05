@@ -9,8 +9,8 @@ public class Student implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String name;
-    private Map<Course, String> enrolledCourses; // Course -> Grade
-    private transient List<Course> shoppingCart; // Temporary shopping cart (not serialized)
+    private Map<Course, String> enrolledCourses;
+    private transient List<Course> shoppingCart;
 
     public Student(String name) {
         this.name = name;
@@ -28,13 +28,13 @@ public class Student implements Serializable {
 
     public List<Course> getShoppingCart() {
         if (shoppingCart == null) {
-            shoppingCart = new ArrayList<>(); // Initialize if null
+            shoppingCart = new ArrayList<>();
         }
         return shoppingCart;
     }
 
     public void addToCart(Course course) {
-        if (!getShoppingCart().contains(course)) { // Use getter to ensure shoppingCart is initialized
+        if (!getShoppingCart().contains(course)) {
             getShoppingCart().add(course);
         }
     }
@@ -48,7 +48,7 @@ public class Student implements Serializable {
             enrolledCourses.putIfAbsent(course, "N/A");
             course.addStudent(name);
         }
-        shoppingCart.clear(); // Clear cart after enrollment
+        shoppingCart.clear();
     }
 
     public void syncGrades() {
