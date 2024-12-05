@@ -17,10 +17,10 @@ public class StudentApp {
             System.out.println("5. View Grades");
             System.out.println("6. Log Out");
             System.out.println("----------------------"); 
-            System.out.println("Choose an option: ");
+            System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -54,7 +54,7 @@ public class StudentApp {
                     break;
                 case 6:
                     System.out.println("Logging out...");
-                    studentManager.saveStudentsToFile(); // Save data when logging out
+                    studentManager.saveStudentsToFile();
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -84,7 +84,7 @@ public class StudentApp {
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
             
             switch (choice) {
                 case 1:
